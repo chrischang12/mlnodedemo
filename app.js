@@ -8,7 +8,9 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+console.log('working');
 var TaskList = require('./routes/tasklist');
+console.log('tasklist success');
 
 var taskList = new Tasklist(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 var app = express();
