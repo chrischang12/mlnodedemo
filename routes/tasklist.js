@@ -12,7 +12,7 @@ TaskList.prototype = {
     task.find({ itemCompleted : false }, function foundTasks(err, items) {
       res.render('index', { title: 'My ToDo List', tasks:items })
     });
-  }
+  },
 
   addTask: function(req, res) {
     var item = req.body.item;
@@ -25,7 +25,7 @@ TaskList.prototype = {
       }
     });
     res.redirect('/');
-  }
+  },
 
   completeTask: function(req, res) {
     var completedTasks = req.body;

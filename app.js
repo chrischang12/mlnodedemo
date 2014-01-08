@@ -12,7 +12,7 @@ console.log('working');
 var TaskList = require('./routes/tasklist');
 console.log('tasklist success');
 
-var taskList = new Tasklist(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 var app = express();
 
 // all environments
