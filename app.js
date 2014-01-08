@@ -8,11 +8,13 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+/*
 console.log('working');
 var TaskList = require('./routes/tasklist');
 console.log('tasklist success');
 
 var taskList = new Tasklist(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+*/
 var app = express();
 
 // all environments
@@ -31,11 +33,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+app.get('/', function(req,res) {
+  res.send("hello world!");
+});
+/*
 app.get('/', taskList.showTasks.bind(taskList));
 app.get('/users', user.list);
 app.post('/addtask', taskList.addTask.bind(taskList));
 app.post('/completetask', taskList.completeTask.bind(taskList));
+*/
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
