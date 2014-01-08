@@ -19,15 +19,15 @@ form(action="/completetask", method="post")
   input(type="submit", value="update tasks")
 
 hr
-  form(action="/addtask", method="post")
-    table(border="1")
-      tr
-        td Item Name:
-        td
-          input(name="item[name]", type="textbox")
-      tr
-        td Item Category:
-        td
-          input(name="item[category]", type="textbox")
-    input(type="submit", value="Add item")
+form(action="/addtask", method="post")
+  table(border="1")
+    tr
+      td Item Name:
+      td
+        input(name="item[name]", type="textbox")
+    tr
+      td Item Category:
+      td
+        input(name="item[category]", type="textbox")
+  input(type="submit", value="Add item")
 
