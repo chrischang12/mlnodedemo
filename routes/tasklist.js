@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var task = require('../models/task.js');
+var mongoose = require('mongoose'), 
+  task = require('../models/task.js');
 
-exports = TaskList;
+module.exports = TaskList;
 
 function TaskList(connection) { 
   mongoose.connect(connection);
@@ -12,7 +12,7 @@ TaskList.prototype = {
     task.find({ itemCompleted : false }, function foundTasks(err, items) {
       res.render('index', { title: 'My ToDo List', tasks:items })
     });
-},
+  }
 
   addTask: function(req, res) {
     var item = req.body.item;
